@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<title>Flask App</title>
+</head>
+<body>
+<h1>Update user Details</h1>
+<form method="post" action="/update_user">
+<label for="name">Name:</label>
+<select id="name" name="name">
+{% for user in users %}
+  <option value="{{ user._id }}">{{ user.name }}</option>
+{% endfor %}
+</select><br><br>
+<label for="email">Email:</label>
+<input type="text" id="email" name="email"><br><br>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password"><br><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
